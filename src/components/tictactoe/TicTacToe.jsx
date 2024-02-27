@@ -70,9 +70,9 @@ const TicTacToe = () => {
     setLock(false);
     data = ["", "" , "", "", "" , "", "", "" , ""];
     titleRef.current.innerHTML = '<span> گلنشین </span>بازی دوز با ';
-    box_array.map((e) => {
-      e.current.innerHTML = ""
-    })
+    box_array.forEach((ref) => {
+      ref.current.innerHTML = "";
+    });
   }
 
   return (
