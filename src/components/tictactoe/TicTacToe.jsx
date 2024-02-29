@@ -54,6 +54,8 @@ const TicTacToe = () => {
       won(data[8])
     }else if(data[2]===data[4] && data[4]===data[6] && data[6]!=="") {
       won(data[6])
+    }else {
+      checkDraw()
     }
   };
 
@@ -64,16 +66,22 @@ const TicTacToe = () => {
     } else {
       titleRef.current.innerHTML = `*** برد<img src=${circle_icon}>ایول بابا ***`
     }
-  }
+  };
 
   const reset = () => {
     setLock(false);
     data = ["", "" , "", "", "" , "", "", "" , ""];
     titleRef.current.innerHTML = '<span> گلنشین </span>بازی دوز با ';
-    box_array.map((e) => {
-      e.current.innerHTML = ""
+    box_array.forEach((ref) => {
+      ref.current.innerHTML = "";
     })
-  }
+  };
+
+  const checkDraw = () => {
+    if (data.every((item) => item !== "")) {
+      titleRef.current.innerHTML = '<span>  مساوی شد </span>بازی دوز  ';
+    }
+  };
 
   return (
     <div className='container'>
