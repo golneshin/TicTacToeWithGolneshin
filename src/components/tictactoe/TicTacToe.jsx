@@ -79,7 +79,7 @@ const TicTacToe = () => {
 
   const checkDraw = () => {
     if (data.every((item) => item !== "")) {
-      titleRef.current.innerHTML = '<span>  مساوی شد </span>بازی دوز  ';
+      titleRef.current.innerHTML = ' شد<span> مساوی  </span>بازی دوز ';
     }
   };
 
